@@ -11,7 +11,7 @@
   "icons": [
     {
       "src": "/images/icon-128.png",
-      "sizes": "192x192",
+      "sizes": "128x128",
       "type": "image/png",
       "purpose": "any maskable"
     },
@@ -20,20 +20,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/images/screenshot1.png",
-      "type": "image/png",
-      "sizes": "540x720",
-      "form_factor": "narrow"  
-    },
-    {
-      "src": "/images/screenshot2.png",
-      "type": "image/png",
-      "sizes": "1280x720",
-      "form_factor": "wide"  
     }
   ],
   "categories": ["productivity", "utilities"],
