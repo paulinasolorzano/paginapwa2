@@ -1,7 +1,7 @@
 {
   "name": "To-Do List PWA",
   "short_name": "To-Do PWA",
-  "description": "A simple PWA To-Do List application",
+  "description": "Aplicación simple PWA",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
