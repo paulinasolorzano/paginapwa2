@@ -1,3 +1,4 @@
+
 const cacheName = 'todo-cache-v1';
 const assets = [
     '/',
@@ -41,3 +42,7 @@ self.addEventListener('fetch', event => {
         })
     );
 });
+
+// aqui empieza el que funciona
+
+
