@@ -10,39 +10,56 @@ const assets = [
     '/images/icon-512.png'
 ];
 
-// Instalación del Service Worker y cacheo de los archivos
-self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(cacheName).then(cache => {
-            return cache.addAll(assets);
-        })
-    );
-});
 
-// Activación del Service Worker y manejo de versiones anteriores
-self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
+self.addEventListener('install', e => {
+    e.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(cache => {
+            return cache.addAll(urlsToCache)
+                .then(() => self.skipWaiting())
+        })
+        .catch(err => console.log('Falló registro de cache', err))
+    )
+})
+
+
+self.addEventListener('activate', e => {
+    const cacheWhitelist = [CACHE_NAME]
+    e.waitUntil(
+        caches.keys()
+        .then(cacheNames => {
             return Promise.all(
-                cacheNames.map(thisCache => {
-                    if (thisCache !== cacheName) {
-                        return caches.delete(thisCache);
+                cacheNames.map(cacheName => {
+                    //Eliminamos lo que ya no se necesita en cache
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName)
                     }
                 })
-            );
+            )
         })
-    );
-});
+        // Le indica al SW activar el cache actual
+        .then(() => self.clients.claim())
+    )
+})
 
-// Intercepción de las solicitudes para servir desde el caché
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
+
+self.addEventListener('fetch', e => {
+    //Responder ya sea con el objeto en caché o continuar y buscar la url real
+    e.respondWith(
+        caches.match(e.request)
+        .then(res => {
+            if (res) {
+                //recuperar del cache
+                return res
+            }
+            //recuperar de la petición a la url
+            return fetch(e.request)
         })
-    );
-});
+    )
+})
 
-// aqui empieza el que funciona
+
+
+
 
 
