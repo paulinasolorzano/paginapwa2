@@ -36,7 +36,7 @@ todoInput.addEventListener('keypress', (e) => {
 
 // Registrar el Service Worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
+   navigator.serviceWorker.register('./service-worker.js')
     .then(reg => console.log('Service Worker registrado:', reg))
     .catch(err => console.error('Error al registrar el Service Worker:', err));
 }
