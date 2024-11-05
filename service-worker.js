@@ -1,13 +1,13 @@
 // Nombre del caché y lista de activos que queremos almacenar en caché
 const cacheName = 'todo-cache-v1';
 const assets = [
-    './',                  // Página de inicio
-    './index.html',        // Archivo HTML principal
-    './style.css',         // Estilos CSS
-    './app.js',            // Archivo JavaScript principal
-    './manifest.json',     // Archivo de manifest de la aplicación
-    './images/icon-192.png', // Ícono de 192px para dispositivos
-    './images/icon-512.png'  // Ícono de 512px para dispositivos
+    '/',                  // Página de inicio
+    '/index.html',        // Archivo HTML principal
+    '/style.css',         // Estilos CSS
+    '/app.js',            // Archivo JavaScript principal
+    '/manifest.json',     // Archivo de manifest de la aplicación
+    '/images/icon-192.png', // Ícono de 192px para dispositivos
+    '/images/icon-512.png'  // Ícono de 512px para dispositivos
 ];
 
 // Evento de instalación: ocurre la primera vez que el Service Worker se registra
