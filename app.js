@@ -2,7 +2,7 @@ const todoInput = document.getElementById('todo-input');
 const addBtn = document.getElementById('add-btn');
 const todoList = document.getElementById('todo-list');
 
-// Función para agregar tareas
+
 function addTodo() {
     const todoText = todoInput.value.trim();
     if (todoText === '') return;
@@ -23,10 +23,8 @@ function addTodo() {
     todoInput.value = '';
 }
 
-// Evento al hacer clic en el botón "Add Task"
 addBtn.addEventListener('click', addTodo);
 
-// Evento al presionar Enter
 todoInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         addTodo();
@@ -34,7 +32,6 @@ todoInput.addEventListener('keypress', (e) => {
 });
 
 
-// Registrar el Service Worker
 if ('serviceWorker' in navigator) {
    navigator.serviceWorker.register('./service-worker.js')
     .then(reg => console.log('Service Worker registrado:', reg))
