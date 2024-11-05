@@ -19,7 +19,6 @@ function addTodo() {
 
     li.appendChild(deleteBtn);
     todoList.appendChild(li);
-
     todoInput.value = '';
 }
 
