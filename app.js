@@ -6,17 +6,14 @@ const todoList = document.getElementById('todo-list');
 function addTodo() {
     const todoText = todoInput.value.trim();
     if (todoText === '') return;
-
     const li = document.createElement('li');
     li.textContent = todoText;
-
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.classList.add('delete');
     deleteBtn.addEventListener('click', () => {
         li.remove();
     });
-
     li.appendChild(deleteBtn);
     todoList.appendChild(li);
     todoInput.value = '';
