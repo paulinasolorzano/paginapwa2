@@ -9,7 +9,7 @@ function addTodo() {
     const li = document.createElement('li');
     li.textContent = todoText;
     const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
+    deleteBtn.textContent = 'Borrar';
     deleteBtn.classList.add('delete');
     deleteBtn.addEventListener('click', () => {
         li.remove();
