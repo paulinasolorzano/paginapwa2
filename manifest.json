@@ -22,6 +22,14 @@
       "purpose": "any"
     }
   ],
+"screenshots": [
+    {
+      "src": "./images/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
   "categories": ["productivity", "utilities"],
   "display_override": ["standalone", "fullscreen", "minimal-ui"]
 }
